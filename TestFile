@@ -1,0 +1,3 @@
+if (youCanReadThis) {
+it = works;
+}
