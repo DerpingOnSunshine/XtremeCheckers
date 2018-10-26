@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gameController : MonoBehaviour {
-
+    int[] selectedPieceLocation;
     int[,] boardArray;
     public Transform selection;
 
@@ -24,6 +24,15 @@ public class gameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(boardArray[0, 4]);
-	}
+        //not exactly sure what this does, but I think it will help?
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            Transform objectHit = hit.transform;
+
+            // Do something with the object that was hit by the raycast.
+        }
+    }
 }
