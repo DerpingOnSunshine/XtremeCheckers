@@ -24,6 +24,29 @@ public class gameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(boardArray[0, 4]);
-	}
+        if (Input.GetMouseButton(0)) //Selection of pieces and stuff and things
+        {
+            Debug.Log("You done clicked!");
+
+            RaycastHit hitInfo = new RaycastHit();
+            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+            if (hit)
+            {
+                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
+                if (hitInfo.transform.gameObject.tag == "gamePiece_r")
+                {
+                    Debug.Log("SUCCESS!");
+                }
+                else
+                {
+                    Debug.Log("FAIL!");
+                }
+            }
+            else
+            {
+                Debug.Log("Did not hit!");
+            }
+
+        }
+    }
 }
