@@ -24,6 +24,7 @@ public class gameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
         //not exactly sure what this does, but I think it will help?
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -33,6 +34,31 @@ public class gameController : MonoBehaviour {
             Transform objectHit = hit.transform;
 
             // Do something with the object that was hit by the raycast.
+=======
+        if (Input.GetMouseButton(0)) //Selection of pieces and stuff and things
+        {
+            Debug.Log("You done clicked!");
+
+            RaycastHit hitInfo = new RaycastHit();
+            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
+            if (hit)
+            {
+                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
+                if (hitInfo.transform.gameObject.tag == "gamePiece_r")
+                {
+                    Debug.Log("SUCCESS!");
+                }
+                else
+                {
+                    Debug.Log("FAIL!");
+                }
+            }
+            else
+            {
+                Debug.Log("Did not hit!");
+            }
+
+>>>>>>> mitchTemp
         }
     }
 }
