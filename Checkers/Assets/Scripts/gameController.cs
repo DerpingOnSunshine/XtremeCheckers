@@ -43,6 +43,7 @@ public class gameController : MonoBehaviour
                 bool hit1 = Physics.Raycast(gameCamera.ScreenPointToRay(Input.mousePosition), out hitInfo);
                 if (hit1)
                 {
+                    GameObject.Find("selectionPiece").GetComponent<selectionScript>().MoveSelection(hitInfo.transform.gameObject);
                     if (hitInfo.transform.gameObject.tag == "gamePiece_r")
                     {
                         Debug.Log("Red!");
