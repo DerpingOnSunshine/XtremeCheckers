@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameController : MonoBehaviour {
+public class gameController : MonoBehaviour
+{
     int[] selectedPieceLocation;
     int[,] boardArray;
     public Transform selection;
+    public Camera gameCamera;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         boardArray = new int[,] //0 = Empty, 1 = Red, 2 = Black
         {
             {2, 0, 2, 0, 2, 0, 2, 0},
@@ -21,44 +24,47 @@ public class gameController : MonoBehaviour {
             {1, 0, 1, 0, 1, 0, 1, 0},
         };
     }
-	
-	// Update is called once per frame
-	void Update () {
-<<<<<<< HEAD
+
+    // Update is called once per frame
+    void Update()
+    {
         //not exactly sure what this does, but I think it will help?
         RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit))
         {
             Transform objectHit = hit.transform;
 
             // Do something with the object that was hit by the raycast.
-=======
-        if (Input.GetMouseButton(0)) //Selection of pieces and stuff and things
-        {
-            Debug.Log("You done clicked!");
-
-            RaycastHit hitInfo = new RaycastHit();
-            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
-            if (hit)
-            {
-                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
-                if (hitInfo.transform.gameObject.tag == "gamePiece_r")
+            if (Input.GetMouseButton(0)) //Selection of pieces and stuff and things
+            { 
+                RaycastHit hitInfo = new RaycastHit();
+                bool hit1 = Physics.Raycast(gameCamera.ScreenPointToRay(Input.mousePosition), out hitInfo);
+                if (hit1)
                 {
-                    Debug.Log("SUCCESS!");
+                    if (hitInfo.transform.gameObject.tag == "gamePiece_r")
+                    {
+                        Debug.Log("Red!");
+                    }
+                    if (hitInfo.transform.gameObject.tag == "gamePiece_b")
+                    {
+                        Debug.Log("Black!");
+                    }
+                    if (hitInfo.transform.gameObject.tag == "redTile")
+                    {
+                        Debug.Log("Black Tile!");
+                    }
+                    if (hitInfo.transform.gameObject.tag == "blackTile")
+                    {
+                        Debug.Log("Black Tile!");
+                    }
                 }
                 else
                 {
-                    Debug.Log("FAIL!");
+                    Debug.Log("Did not hit!");
                 }
             }
-            else
-            {
-                Debug.Log("Did not hit!");
-            }
-
->>>>>>> mitchTemp
         }
     }
 }

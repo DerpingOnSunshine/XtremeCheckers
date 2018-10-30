@@ -6,6 +6,8 @@ TagManager:
   tags:
   - gamePiece_r
   - gamePiece_b
+  - blackTile
+  - redTile
   layers:
   - Default
   - TransparentFX

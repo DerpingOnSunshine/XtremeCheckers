@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 8332455}
   m_Layer: 0
   m_Name: A8
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 14509090}
   m_Layer: 0
   m_Name: E3
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 30521742}
   m_Layer: 0
   m_Name: D1
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 37903092}
   m_Layer: 0
   m_Name: H6
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 52308555}
   m_Layer: 0
   m_Name: gamePiece_Red
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,6 +672,10 @@ Prefab:
       propertyPath: m_Name
       value: H3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: blackTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -688,7 +692,7 @@ GameObject:
   - component: {fileID: 91235783}
   m_Layer: 0
   m_Name: G3
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -772,7 +776,7 @@ GameObject:
   - component: {fileID: 105973678}
   m_Layer: 0
   m_Name: E5
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,7 +860,7 @@ GameObject:
   - component: {fileID: 115521832}
   m_Layer: 0
   m_Name: gamePiece_Red (8)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +945,7 @@ GameObject:
   - component: {fileID: 126850842}
   m_Layer: 0
   m_Name: A3
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,7 +1029,7 @@ GameObject:
   - component: {fileID: 141655941}
   m_Layer: 0
   m_Name: D3
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,7 +1178,7 @@ GameObject:
   - component: {fileID: 176070170}
   m_Layer: 0
   m_Name: F3
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1382,7 +1386,7 @@ GameObject:
   - component: {fileID: 283085401}
   m_Layer: 0
   m_Name: H1
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1466,7 +1470,7 @@ GameObject:
   - component: {fileID: 318197178}
   m_Layer: 0
   m_Name: gamePiece_Black (4)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1551,7 +1555,7 @@ GameObject:
   - component: {fileID: 335103337}
   m_Layer: 0
   m_Name: H2
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1635,7 +1639,7 @@ GameObject:
   - component: {fileID: 337123214}
   m_Layer: 0
   m_Name: B2
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1719,7 +1723,7 @@ GameObject:
   - component: {fileID: 347988437}
   m_Layer: 0
   m_Name: C1
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1803,7 +1807,7 @@ GameObject:
   - component: {fileID: 383015008}
   m_Layer: 0
   m_Name: D6
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1887,7 +1891,7 @@ GameObject:
   - component: {fileID: 438962396}
   m_Layer: 0
   m_Name: F4
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2013,6 +2017,10 @@ Prefab:
       propertyPath: m_Name
       value: H1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: blackTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -2029,7 +2037,7 @@ GameObject:
   - component: {fileID: 499468986}
   m_Layer: 0
   m_Name: Red Base
-  m_TagString: gamePiece_r
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2145,7 +2153,7 @@ GameObject:
   - component: {fileID: 525755245}
   m_Layer: 0
   m_Name: C4
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2227,7 +2235,6 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
-  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2309,18 +2316,6 @@ MonoBehaviour:
   zoomSpeed: 0.2
   sensitivityX: 50
   sensitivityY: 20
---- !u!114 &534669907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b4aeb6775b32a4cb93134fa8967cca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selection: {fileID: 0}
 --- !u!1 &535205696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,7 +2329,7 @@ GameObject:
   - component: {fileID: 535205698}
   m_Layer: 0
   m_Name: gamePiece_Red (11)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2419,7 +2414,7 @@ GameObject:
   - component: {fileID: 548038746}
   m_Layer: 0
   m_Name: Black Base
-  m_TagString: gamePiece_b
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2535,7 +2530,7 @@ GameObject:
   - component: {fileID: 577037712}
   m_Layer: 0
   m_Name: D4
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2619,7 +2614,7 @@ GameObject:
   - component: {fileID: 640101201}
   m_Layer: 0
   m_Name: gamePiece_Red (6)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2704,7 +2699,7 @@ GameObject:
   - component: {fileID: 650027532}
   m_Layer: 0
   m_Name: C3
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2788,7 +2783,7 @@ GameObject:
   - component: {fileID: 650584155}
   m_Layer: 0
   m_Name: gamePiece_Black (2)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2873,7 +2868,7 @@ GameObject:
   - component: {fileID: 660336508}
   m_Layer: 0
   m_Name: A5
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2957,7 +2952,7 @@ GameObject:
   - component: {fileID: 684113178}
   m_Layer: 0
   m_Name: F7
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3041,7 +3036,7 @@ GameObject:
   - component: {fileID: 690132649}
   m_Layer: 0
   m_Name: C8
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3125,7 +3120,7 @@ GameObject:
   - component: {fileID: 691060208}
   m_Layer: 0
   m_Name: gamePiece_Red (3)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3210,7 +3205,7 @@ GameObject:
   - component: {fileID: 700047752}
   m_Layer: 0
   m_Name: B6
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3324,7 +3319,7 @@ GameObject:
   - component: {fileID: 753917259}
   m_Layer: 0
   m_Name: A1
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3408,7 +3403,7 @@ GameObject:
   - component: {fileID: 764768815}
   m_Layer: 0
   m_Name: gamePiece_Black (11)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3493,7 +3488,7 @@ GameObject:
   - component: {fileID: 783972363}
   m_Layer: 0
   m_Name: G1
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3577,7 +3572,7 @@ GameObject:
   - component: {fileID: 816914387}
   m_Layer: 0
   m_Name: E1
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3661,7 +3656,7 @@ GameObject:
   - component: {fileID: 823487021}
   m_Layer: 0
   m_Name: gamePiece_Red (10)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3780,6 +3775,10 @@ Prefab:
       propertyPath: m_Name
       value: H7
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: blackTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -3796,7 +3795,7 @@ GameObject:
   - component: {fileID: 826952878}
   m_Layer: 0
   m_Name: A7
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3880,7 +3879,7 @@ GameObject:
   - component: {fileID: 835883690}
   m_Layer: 0
   m_Name: E4
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3964,7 +3963,7 @@ GameObject:
   - component: {fileID: 840003938}
   m_Layer: 0
   m_Name: H3
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4048,7 +4047,7 @@ GameObject:
   - component: {fileID: 873582824}
   m_Layer: 0
   m_Name: B7
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4132,7 +4131,7 @@ GameObject:
   - component: {fileID: 911378134}
   m_Layer: 0
   m_Name: gamePiece_Red (2)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4217,7 +4216,7 @@ GameObject:
   - component: {fileID: 923355730}
   m_Layer: 0
   m_Name: D7
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4301,7 +4300,7 @@ GameObject:
   - component: {fileID: 936051080}
   m_Layer: 0
   m_Name: gamePiece_Black (10)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4418,7 +4417,7 @@ GameObject:
   - component: {fileID: 983215550}
   m_Layer: 0
   m_Name: B5
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4542,7 +4541,7 @@ GameObject:
   - component: {fileID: 1040229111}
   m_Layer: 0
   m_Name: A2
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4626,7 +4625,7 @@ GameObject:
   - component: {fileID: 1041768282}
   m_Layer: 0
   m_Name: C7
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4794,7 +4793,7 @@ GameObject:
   - component: {fileID: 1060584500}
   m_Layer: 0
   m_Name: gamePiece_Red (4)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4879,7 +4878,7 @@ GameObject:
   - component: {fileID: 1071583336}
   m_Layer: 0
   m_Name: F5
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4963,7 +4962,7 @@ GameObject:
   - component: {fileID: 1072143489}
   m_Layer: 0
   m_Name: F1
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5047,7 +5046,7 @@ GameObject:
   - component: {fileID: 1072710098}
   m_Layer: 0
   m_Name: C5
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5131,7 +5130,7 @@ GameObject:
   - component: {fileID: 1145317771}
   m_Layer: 0
   m_Name: A4
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5215,7 +5214,7 @@ GameObject:
   - component: {fileID: 1182319696}
   m_Layer: 0
   m_Name: H8
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5383,7 +5382,7 @@ GameObject:
   - component: {fileID: 1196088295}
   m_Layer: 0
   m_Name: H5
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5467,7 +5466,7 @@ GameObject:
   - component: {fileID: 1223231883}
   m_Layer: 0
   m_Name: F2
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5551,7 +5550,7 @@ GameObject:
   - component: {fileID: 1242572148}
   m_Layer: 0
   m_Name: gamePiece_Black (6)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5636,7 +5635,7 @@ GameObject:
   - component: {fileID: 1267382251}
   m_Layer: 0
   m_Name: G8
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5720,7 +5719,7 @@ GameObject:
   - component: {fileID: 1270219559}
   m_Layer: 0
   m_Name: D5
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5804,7 +5803,7 @@ GameObject:
   - component: {fileID: 1342233380}
   m_Layer: 0
   m_Name: C2
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5888,7 +5887,7 @@ GameObject:
   - component: {fileID: 1363084868}
   m_Layer: 0
   m_Name: G5
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5972,7 +5971,7 @@ GameObject:
   - component: {fileID: 1369502435}
   m_Layer: 0
   m_Name: gamePiece_Red (5)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6057,7 +6056,7 @@ GameObject:
   - component: {fileID: 1393013051}
   m_Layer: 0
   m_Name: B1
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6141,7 +6140,7 @@ GameObject:
   - component: {fileID: 1425186635}
   m_Layer: 0
   m_Name: gamePiece_Red (9)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6226,7 +6225,7 @@ GameObject:
   - component: {fileID: 1427043009}
   m_Layer: 0
   m_Name: H4
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6310,7 +6309,7 @@ GameObject:
   - component: {fileID: 1432911663}
   m_Layer: 0
   m_Name: gamePiece_Red (7)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6395,7 +6394,7 @@ GameObject:
   - component: {fileID: 1513254519}
   m_Layer: 0
   m_Name: E6
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6479,7 +6478,7 @@ GameObject:
   - component: {fileID: 1532883195}
   m_Layer: 0
   m_Name: E8
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6563,7 +6562,7 @@ GameObject:
   - component: {fileID: 1551064701}
   m_Layer: 0
   m_Name: E7
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6647,7 +6646,7 @@ GameObject:
   - component: {fileID: 1554623249}
   m_Layer: 0
   m_Name: D8
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6731,7 +6730,7 @@ GameObject:
   - component: {fileID: 1580618189}
   m_Layer: 0
   m_Name: H7
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6815,7 +6814,7 @@ GameObject:
   - component: {fileID: 1622367495}
   m_Layer: 0
   m_Name: gamePiece_Red (1)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6900,7 +6899,7 @@ GameObject:
   - component: {fileID: 1638314185}
   m_Layer: 0
   m_Name: B3
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6984,7 +6983,7 @@ GameObject:
   - component: {fileID: 1688106445}
   m_Layer: 0
   m_Name: G4
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7068,7 +7067,7 @@ GameObject:
   - component: {fileID: 1690006720}
   m_Layer: 0
   m_Name: gamePiece_Black (8)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7153,7 +7152,7 @@ GameObject:
   - component: {fileID: 1726163855}
   m_Layer: 0
   m_Name: gamePiece_Black (7)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7238,7 +7237,7 @@ GameObject:
   - component: {fileID: 1750499012}
   m_Layer: 0
   m_Name: gamePiece_Black (5)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7323,7 +7322,7 @@ GameObject:
   - component: {fileID: 1773844191}
   m_Layer: 0
   m_Name: D2
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7407,7 +7406,7 @@ GameObject:
   - component: {fileID: 1796686568}
   m_Layer: 0
   m_Name: G2
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7491,7 +7490,7 @@ GameObject:
   - component: {fileID: 1800683820}
   m_Layer: 0
   m_Name: F8
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7575,7 +7574,7 @@ GameObject:
   - component: {fileID: 1804397107}
   m_Layer: 0
   m_Name: gamePiece_Black
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7660,7 +7659,7 @@ GameObject:
   - component: {fileID: 1806411102}
   m_Layer: 0
   m_Name: G6
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7744,7 +7743,7 @@ GameObject:
   - component: {fileID: 1813517025}
   m_Layer: 0
   m_Name: B4
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7828,7 +7827,7 @@ GameObject:
   - component: {fileID: 1840253793}
   m_Layer: 0
   m_Name: E2
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7912,7 +7911,7 @@ GameObject:
   - component: {fileID: 1840755498}
   m_Layer: 0
   m_Name: gamePiece_Black (3)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8039,6 +8038,10 @@ Prefab:
       propertyPath: m_Name
       value: H5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: blackTile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -8070,6 +8073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selection: {fileID: 0}
+  gameCamera: {fileID: 534669904}
 --- !u!4 &1921929797
 Transform:
   m_ObjectHideFlags: 0
@@ -8100,7 +8104,7 @@ GameObject:
   - component: {fileID: 1930575198}
   m_Layer: 0
   m_Name: A6
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8184,7 +8188,7 @@ GameObject:
   - component: {fileID: 1991416880}
   m_Layer: 0
   m_Name: G7
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8268,7 +8272,7 @@ GameObject:
   - component: {fileID: 2005129443}
   m_Layer: 0
   m_Name: gamePiece_Black (9)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8353,7 +8357,7 @@ GameObject:
   - component: {fileID: 2005681314}
   m_Layer: 0
   m_Name: B8
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8437,7 +8441,7 @@ GameObject:
   - component: {fileID: 2101148207}
   m_Layer: 0
   m_Name: gamePiece_Black (1)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8522,7 +8526,7 @@ GameObject:
   - component: {fileID: 2105658956}
   m_Layer: 0
   m_Name: C6
-  m_TagString: Untagged
+  m_TagString: blackTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8606,7 +8610,7 @@ GameObject:
   - component: {fileID: 2107471954}
   m_Layer: 0
   m_Name: F6
-  m_TagString: Untagged
+  m_TagString: redTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
