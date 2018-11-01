@@ -9,7 +9,7 @@ public class CameraControl : MonoBehaviour
     private const float Y_ANGLE_MIN = 5.0f; //Minimum camera angle (y)
     private const float Y_ANGLE_MAX = 50.0f; //Maximum camera angle (y)
 
-    public Transform lookAt; //Game object to look at
+    public GameObject lookAt; //Game object to look at
     public Transform camTransform; //Camera's transform component
     public float distance = 10.0f; //Distance of camera from object
     public float distance_MIN; //Minimum distance of camera from object
@@ -24,6 +24,13 @@ public class CameraControl : MonoBehaviour
     private void Start()
     {
         camTransform = transform; //Forgot what this was for
+        lookAt = GameObject.Find("boardMiddle");
+    }
+
+    public void SetLookAt(GameObject gameobject)
+    {
+        Debug.Log("Attemping to assign...");
+        lookAt = gameobject;
     }
 
     private void Update()
@@ -69,7 +76,7 @@ public class CameraControl : MonoBehaviour
     {
         Vector3 dir = new Vector3(0, 0, -distance); //Not sure
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0); //Don't remember
-        camTransform.position = lookAt.position + rotation * dir; //Position of camera
-        camTransform.LookAt(lookAt.position); //Look at the object
+        camTransform.position = lookAt.transform.position + rotation * dir; //Position of camera
+        camTransform.LookAt(lookAt.transform.position); //Look at the object
     }
 }
