@@ -5,21 +5,22 @@ using UnityEngine;
 public class selectionScript : MonoBehaviour
 {
     public Camera gameCamera;
-    public GameObject pieceSelectorObject;
-    public GameObject tileSelectorObject;
-
-    private GameObject selectedObject;
-
-    private Renderer isVisible;
 
     private GameObject tileCheck;
+    private GameObject selectedObject;
+
+    public GameObject pieceSelectorObject;
+    public GameObject tileSelectorObject;
+    private Renderer isVisible;
+
+    private bool canClick = true;
 
     private Vector3 redDirection; //Negative x
     private Vector3 right; //z = 5
     private Vector3 left; //Negative right
-    private Vector3 blackDirection; //positive x
+    private Vector3 blackDirection; //Positive x
 
-    public GameObject selection;
+
 
     // Use this for initialization
     void Start()
@@ -33,7 +34,18 @@ public class selectionScript : MonoBehaviour
         right.Set(0, 0, 5);
         left.Set(0, 0, -5);
 
-        selection = GameObject.Find("boardMiddle");
+        selectedObject = GameObject.Find("boardMiddle");
+    }
+
+    IEnumerator selectionWait() //Cooldown for selecting new unit (Not being called as of 11/2)
+    {
+        Debug.Log("Can click: " + canClick);
+        canClick = false;
+        // suspend execution for 1f seconds
+        yield return new WaitForSeconds(1f);
+        print("WaitAndPrint " + Time.time);
+        canClick = true;
+        Debug.Log("Can click: " + canClick);
     }
 
     // Update is called once per frame
@@ -43,20 +55,24 @@ public class selectionScript : MonoBehaviour
         RaycastHit hit;
         Ray ray = gameCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit) && canClick)
         {
             Transform objectHit = hit.transform;
 
             // Do something with the object that was hit by the raycast.
-            if (Input.GetMouseButton(0)) //Selection of pieces and stuff and things
+            if (Input.GetMouseButton(0) && canClick) //Selection of pieces and stuff and things
             {
+                //canClick = false; //Timer normally would reset this to true, but is currently unable to be called due to the error below
                 RaycastHit hitInfo = new RaycastHit();
                 bool hit1 = Physics.Raycast(gameCamera.ScreenPointToRay(Input.mousePosition), out hitInfo);
                 if (hit1)
                 {
                     MoveSelection(hitInfo.transform.gameObject);
-                    selection = getSelectedPiece();
-                    GetComponent<CameraControl>().SetLookAt(getSelectedPiece());
+                    Debug.Log("Selected Object: " + selectedObject);
+                    Debug.Log("Attemping to assign " + selectedObject + " to camera lookAt...");
+
+                    GetComponent<CameraControl>().SetLookAtTarget(selectedObject); //THE ERROR MAKER!!! Does not like the parameter selectedObject, even though I made sure it was a valid GameObject.
+
                     Debug.Log("assigned!");
                     if (hitInfo.transform.gameObject.tag == "gamePiece_r")
                     {
@@ -74,30 +90,31 @@ public class selectionScript : MonoBehaviour
                     {
                         Debug.Log("Black Tile!");
                     }
-                    if (selection.tag == "gamePiece_r") //Checks selection type for direction
+                    if (selectedObject.tag == "gamePiece_r") //Checks selection type for direction
                     {
-                        Debug.Log("You've selected a red piece");
+                        //Debug.Log("You've selected a red piece");
                         GameObject tileChecker = Instantiate(pieceSelectorObject, redDirection + right, tileSelectorObject.transform.rotation) as GameObject;
                         GameObject tileChecker1 = Instantiate(pieceSelectorObject, redDirection + left, tileSelectorObject.transform.rotation) as GameObject;
                     }
-                    else if (selection.tag == "gamePiece_b") //Checks selection type for direction
+                    else if (selectedObject.tag == "gamePiece_b") //Checks selection type for direction
                     {
-                        Debug.Log("You've selected a black piece");
+                        //Debug.Log("You've selected a black piece");
                         GameObject tileChecker = Instantiate(pieceSelectorObject, blackDirection + right, tileSelectorObject.transform.rotation) as GameObject;
                         GameObject tileChecker1 = Instantiate(pieceSelectorObject, blackDirection + left, tileSelectorObject.transform.rotation) as GameObject;
                     }
-                    Debug.Log(selection);
                 }
             }
         }
+        selectionWait(); //Prevent selecting the same object multiple times (once per frame)
     }
 
         void MoveSelection(GameObject target)
         {
-            Debug.Log(target);
-            selectedObject = target;
-            pieceSelectorObject.transform.SetPositionAndRotation(target.transform.position, pieceSelectorObject.transform.rotation);
-            isVisible.enabled = true;
+            Debug.Log("Target: " + target); //Displays method input object name
+            selectedObject = target; //Assigns target to gameObject
+            pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target
+                (target.transform.position, pieceSelectorObject.transform.rotation);
+            isVisible.enabled = true; //Make selection piece visible
         }
         void Move(GameObject selection, GameObject target)
         {
