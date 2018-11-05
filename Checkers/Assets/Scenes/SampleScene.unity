@@ -5498,7 +5498,7 @@ GameObject:
   - component: {fileID: 1157625649}
   - component: {fileID: 1157625648}
   - component: {fileID: 1157625647}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: tileSelection
   m_TagString: redTile
   m_Icon: {fileID: 0}
@@ -6763,7 +6763,7 @@ GameObject:
   - component: {fileID: 1438323468}
   - component: {fileID: 1438323467}
   - component: {fileID: 1438323466}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: selectionPiece
   m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
@@ -6797,7 +6797,6 @@ MonoBehaviour:
   gameCamera: {fileID: 534669904}
   pieceSelectorObject: {fileID: 1438323464}
   tileSelectorObject: {fileID: 1157625645}
-  selection: {fileID: 0}
 --- !u!136 &1438323467
 CapsuleCollider:
   m_ObjectHideFlags: 0

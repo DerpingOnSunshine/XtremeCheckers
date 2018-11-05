@@ -27,10 +27,10 @@ public class CameraControl : MonoBehaviour
         lookAt = GameObject.Find("boardMiddle");
     }
 
-    public void SetLookAt(GameObject gameobject)
+    public void SetLookAtTarget(GameObject target)
     {
-        Debug.Log("Attemping to assign...");
-        lookAt = gameobject;
+        Debug.Log("Attemping to assign..."); //If this is displayed then the method was called correctly (It isn't displayed as of 11/2)
+        lookAt = target;
     }
 
     private void Update()
