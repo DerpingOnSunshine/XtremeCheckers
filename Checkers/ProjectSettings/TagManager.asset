@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - gamePiece_b
+  - gamePiece_r
   layers:
   - Default
   - TransparentFX

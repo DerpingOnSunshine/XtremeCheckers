@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 52308555}
   m_Layer: 0
   m_Name: gamePiece_Red
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 115521832}
   m_Layer: 0
   m_Name: gamePiece_Red (8)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 197077267}
   m_Layer: 0
   m_Name: Black Pieces
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,11 +1284,11 @@ Transform:
   m_LocalPosition: {x: -0.21, y: 0, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1804397110}
   - {fileID: 2101148206}
   - {fileID: 650584154}
   - {fileID: 1840755497}
   - {fileID: 318197177}
+  - {fileID: 1804397110}
   - {fileID: 1750499011}
   - {fileID: 1242572147}
   - {fileID: 1726163854}
@@ -1487,7 +1487,7 @@ GameObject:
   - component: {fileID: 318197178}
   m_Layer: 0
   m_Name: gamePiece_Black (4)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +1503,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 0.099999994, z: 3.5}
   m_Children: []
   m_Father: {fileID: 197077267}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &318197178
 CapsuleCollider:
@@ -2355,7 +2355,7 @@ GameObject:
   - component: {fileID: 535205698}
   m_Layer: 0
   m_Name: gamePiece_Red (11)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2643,7 +2643,7 @@ GameObject:
   - component: {fileID: 640101201}
   m_Layer: 0
   m_Name: gamePiece_Red (6)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2814,7 +2814,7 @@ GameObject:
   - component: {fileID: 650584155}
   m_Layer: 0
   m_Name: gamePiece_Black (2)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2830,7 +2830,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 0.099999994, z: 3.5}
   m_Children: []
   m_Father: {fileID: 197077267}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &650584155
 CapsuleCollider:
@@ -3155,7 +3155,7 @@ GameObject:
   - component: {fileID: 691060208}
   m_Layer: 0
   m_Name: gamePiece_Red (3)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3441,7 +3441,7 @@ GameObject:
   - component: {fileID: 764768815}
   m_Layer: 0
   m_Name: gamePiece_Black (11)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3697,7 +3697,7 @@ GameObject:
   - component: {fileID: 823487021}
   m_Layer: 0
   m_Name: gamePiece_Red (10)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4178,7 +4178,7 @@ GameObject:
   - component: {fileID: 911378134}
   m_Layer: 0
   m_Name: gamePiece_Red (2)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4349,7 +4349,7 @@ GameObject:
   - component: {fileID: 936051080}
   m_Layer: 0
   m_Name: gamePiece_Black (10)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4549,7 +4549,7 @@ GameObject:
   - component: {fileID: 1017227474}
   m_Layer: 0
   m_Name: Red Pieces
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4847,7 +4847,7 @@ GameObject:
   - component: {fileID: 1060584500}
   m_Layer: 0
   m_Name: gamePiece_Red (4)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5618,7 +5618,7 @@ GameObject:
   - component: {fileID: 1242572148}
   m_Layer: 0
   m_Name: gamePiece_Black (6)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6044,7 +6044,7 @@ GameObject:
   - component: {fileID: 1369502435}
   m_Layer: 0
   m_Name: gamePiece_Red (5)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6215,7 +6215,7 @@ GameObject:
   - component: {fileID: 1425186635}
   m_Layer: 0
   m_Name: gamePiece_Red (9)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6386,7 +6386,7 @@ GameObject:
   - component: {fileID: 1432911663}
   m_Layer: 0
   m_Name: gamePiece_Red (7)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6902,7 +6902,7 @@ GameObject:
   - component: {fileID: 1622367495}
   m_Layer: 0
   m_Name: gamePiece_Red (1)
-  m_TagString: Untagged
+  m_TagString: gamePiece_r
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7158,7 +7158,7 @@ GameObject:
   - component: {fileID: 1690006720}
   m_Layer: 0
   m_Name: gamePiece_Black (8)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7244,7 +7244,7 @@ GameObject:
   - component: {fileID: 1726163855}
   m_Layer: 0
   m_Name: gamePiece_Black (7)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7330,7 +7330,7 @@ GameObject:
   - component: {fileID: 1750499012}
   m_Layer: 0
   m_Name: gamePiece_Black (5)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7671,7 +7671,7 @@ GameObject:
   - component: {fileID: 1804397107}
   m_Layer: 0
   m_Name: gamePiece_Black
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7742,7 +7742,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 0.1, z: 3.5}
   m_Children: []
   m_Father: {fileID: 197077267}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806411100
 GameObject:
@@ -8012,7 +8012,7 @@ GameObject:
   - component: {fileID: 1840755498}
   m_Layer: 0
   m_Name: gamePiece_Black (3)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8028,7 +8028,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 0.099999994, z: 3.5}
   m_Children: []
   m_Father: {fileID: 197077267}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1840755498
 CapsuleCollider:
@@ -8371,7 +8371,7 @@ GameObject:
   - component: {fileID: 2005129443}
   m_Layer: 0
   m_Name: gamePiece_Black (9)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8542,7 +8542,7 @@ GameObject:
   - component: {fileID: 2101148207}
   m_Layer: 0
   m_Name: gamePiece_Black (1)
-  m_TagString: Untagged
+  m_TagString: gamePiece_b
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8558,7 +8558,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 0.099999994, z: 3.5}
   m_Children: []
   m_Father: {fileID: 197077267}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2101148207
 CapsuleCollider:

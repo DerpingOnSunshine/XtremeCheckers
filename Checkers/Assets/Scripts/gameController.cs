@@ -24,15 +24,13 @@ public class gameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //not exactly sure what this does, but I think it will help?
-        RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit))
+        
+    }
+    void OnMouseDown()
+    {
+        if (this.gameObject.tag == "gamePiece_r")
         {
-            Transform objectHit = hit.transform;
-
-            // Do something with the object that was hit by the raycast.
+            Debug.Log("you clicked a red");
         }
     }
 }
