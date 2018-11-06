@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour {
         }
     }
 
-    private int _tick()
+    private void _tick()
     {
         timeRemaining--;
         if (timeRemaining > 0)
