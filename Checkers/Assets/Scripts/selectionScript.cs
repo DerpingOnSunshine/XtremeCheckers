@@ -20,8 +20,6 @@ public class selectionScript : MonoBehaviour
     private Vector3 left; //Negative right
     private Vector3 blackDirection; //Positive x
 
-
-
     // Use this for initialization
     void Start()
     {
@@ -68,10 +66,11 @@ public class selectionScript : MonoBehaviour
                 if (hit1)
                 {
                     MoveSelection(hitInfo.transform.gameObject);
+
                     Debug.Log("Selected Object: " + selectedObject);
                     Debug.Log("Attemping to assign " + selectedObject + " to camera lookAt...");
 
-                    GetComponent<CameraControl>().SetLookAtTarget(selectedObject); //THE ERROR MAKER!!! Does not like the parameter selectedObject, even though I made sure it was a valid GameObject.
+                    gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject); //THE ERROR MAKER!!! Does not like the parameter selectedObject, even though I made sure it was a valid GameObject.
 
                     Debug.Log("assigned!");
                     if (hitInfo.transform.gameObject.tag == "gamePiece_r")
@@ -92,15 +91,11 @@ public class selectionScript : MonoBehaviour
                     }
                     if (selectedObject.tag == "gamePiece_r") //Checks selection type for direction
                     {
-                        //Debug.Log("You've selected a red piece");
-                        GameObject tileChecker = Instantiate(pieceSelectorObject, redDirection + right, tileSelectorObject.transform.rotation) as GameObject;
-                        GameObject tileChecker1 = Instantiate(pieceSelectorObject, redDirection + left, tileSelectorObject.transform.rotation) as GameObject;
+
                     }
                     else if (selectedObject.tag == "gamePiece_b") //Checks selection type for direction
                     {
-                        //Debug.Log("You've selected a black piece");
-                        GameObject tileChecker = Instantiate(pieceSelectorObject, blackDirection + right, tileSelectorObject.transform.rotation) as GameObject;
-                        GameObject tileChecker1 = Instantiate(pieceSelectorObject, blackDirection + left, tileSelectorObject.transform.rotation) as GameObject;
+       
                     }
                 }
             }
@@ -110,6 +105,7 @@ public class selectionScript : MonoBehaviour
 
         void MoveSelection(GameObject target)
         {
+            GameObject.FindGameObjectsWithTag("logic_Selection");
             Debug.Log("Target: " + target); //Displays method input object name
             selectedObject = target; //Assigns target to gameObject
             pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target

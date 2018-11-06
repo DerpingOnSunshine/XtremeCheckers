@@ -24,13 +24,14 @@ public class CameraControl : MonoBehaviour
     private void Start()
     {
         camTransform = transform; //Forgot what this was for
-        lookAt = GameObject.Find("boardMiddle");
+        SetLookAtTarget(GameObject.Find("boardMiddle"));
     }
 
     public void SetLookAtTarget(GameObject target)
     {
         Debug.Log("Attemping to assign..."); //If this is displayed then the method was called correctly (It isn't displayed as of 11/2)
         lookAt = target;
+        Debug.Log("Success!");
     }
 
     private void Update()
