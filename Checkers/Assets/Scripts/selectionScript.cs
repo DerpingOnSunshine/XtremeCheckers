@@ -23,6 +23,10 @@ public class selectionScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        gameCamera = Camera.main;
+        tileSelectorObject = GameObject.Find("tileSelection");
+        pieceSelectorObject = GameObject.Find("selectionPiece");
+
         isVisible = GetComponent<Renderer>();
         isVisible.enabled = false;
 
@@ -35,15 +39,17 @@ public class selectionScript : MonoBehaviour
         selectedObject = GameObject.Find("boardMiddle");
     }
 
-    IEnumerator selectionWait() //Cooldown for selecting new unit (Not being called as of 11/2)
+    IEnumerator selectionWait(float countdownValue)
     {
-        Debug.Log("Can click: " + canClick);
         canClick = false;
-        // suspend execution for 1f seconds
-        yield return new WaitForSeconds(1f);
-        print("WaitAndPrint " + Time.time);
+        float currCountdownValue = countdownValue;
+        while(currCountdownValue > 0)
+        {
+            Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(.5f);
+            currCountdownValue--;
+        }
         canClick = true;
-        Debug.Log("Can click: " + canClick);
     }
 
     // Update is called once per frame
@@ -70,7 +76,10 @@ public class selectionScript : MonoBehaviour
                     Debug.Log("Selected Object: " + selectedObject);
                     Debug.Log("Attemping to assign " + selectedObject + " to camera lookAt...");
 
-                    gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject); //THE ERROR MAKER!!! Does not like the parameter selectedObject, even though I made sure it was a valid GameObject.
+                    gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject);
+                    Debug.Log("Doing a thing");
+                    StartCoroutine(selectionWait(.5f));
+                    Debug.Log("Did the thing");
 
                     Debug.Log("assigned!");
                     if (hitInfo.transform.gameObject.tag == "gamePiece_r")
@@ -100,7 +109,7 @@ public class selectionScript : MonoBehaviour
                 }
             }
         }
-        selectionWait(); //Prevent selecting the same object multiple times (once per frame)
+        
     }
 
         void MoveSelection(GameObject target)

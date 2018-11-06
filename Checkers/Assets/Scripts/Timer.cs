@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour { //Use this for counting down
 
     public int duration = 60;
     public int timeRemaining;
     public bool isCountingDown = false;
+
     public void Begin()
     {
         if (!isCountingDown)
@@ -17,7 +18,7 @@ public class Timer : MonoBehaviour {
         }
     }
 
-    private int _tick()
+    private void _tick()
     {
         timeRemaining--;
         if (timeRemaining > 0)
