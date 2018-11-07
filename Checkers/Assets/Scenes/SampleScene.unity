@@ -2481,12 +2481,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookAt: {fileID: 129814789}
   camTransform: {fileID: 534669905}
-  distance: 35
+  distance: 50
   distance_MIN: 5
-  distance_MAX: 35
+  distance_MAX: 50
   zoomSpeed: 0.25
-  sensitivityX: 4
-  sensitivityY: 1
+  sensitivityX: 50
+  sensitivityY: 25
 --- !u!1 &535205696
 GameObject:
   m_ObjectHideFlags: 0
