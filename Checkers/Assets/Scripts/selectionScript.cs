@@ -126,6 +126,7 @@ public class selectionScript : MonoBehaviour
             tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
         }
     }
+
     void MoveSelection(GameObject target)
         {
         if (GameObject.Find("tileSelection(Clone)") != null)
