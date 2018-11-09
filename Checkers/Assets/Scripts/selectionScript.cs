@@ -73,84 +73,102 @@ public class selectionScript : MonoBehaviour
                 {
                     MoveSelection(hitInfo.transform.gameObject);
 
-                    Debug.Log("Selected Object: " + selectedObject);
-                    Debug.Log("Attemping to assign " + selectedObject + " to camera lookAt...");
+                    //Debug.Log("Selected Object: " + selectedObject);
+                    //Debug.Log("Attemping to assign " + selectedObject + " to camera lookAt...");
 
                     gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject);
-                    Debug.Log("Doing a thing");
+
                     StartCoroutine(selectionWait(.5f));
-                    Debug.Log("Did the thing");
-
-                    Debug.Log("assigned!");
-                    if (hitInfo.transform.gameObject.tag == "gamePiece_r")
-                    {
-                        Debug.Log("Red!");
-                    }
-                    if (hitInfo.transform.gameObject.tag == "gamePiece_b")
-                    {
-                        Debug.Log("Black!");
-                    }
-                    if (hitInfo.transform.gameObject.tag == "redTile")
-                    {
-                        Debug.Log("Black Tile!");
-                    }
-                    if (hitInfo.transform.gameObject.tag == "blackTile")
-                    {
-                        Debug.Log("Black Tile!");
-                    }
-                    if (selectedObject.tag == "gamePiece_r") //Checks selection type for direction
-                    {
-                        Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, selectedObject.transform.position.z);
-                        GameObject tileDood = Instantiate(tileSelectorObject, selectedPosition + redDirection + right, Quaternion.identity);
-                        GameObject tileDood1 = Instantiate(tileSelectorObject, selectedPosition + redDirection + left, Quaternion.identity);
-
-                        tileDood.transform.SetParent(tileSelectorObject.transform);
-                        tileDood1.transform.SetParent(tileSelectorObject.transform);
-
-                        tileDood.transform.localScale = tileSelectorObject.transform.localScale;
-                        tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
-
-                        //need to set the y positon to 0 somehow!
-                    }
-                    else if (selectedObject.tag == "gamePiece_b") //Checks selection type for direction
-                    {
-                        Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, selectedObject.transform.position.z);
-                        GameObject tileDood = Instantiate(tileSelectorObject, selectedPosition + blackDirection + right, Quaternion.identity);
-                        GameObject tileDood1 = Instantiate(tileSelectorObject, selectedPosition + blackDirection + left, Quaternion.identity);
-
-                        tileDood.transform.SetParent(tileSelectorObject.transform);
-                        tileDood1.transform.SetParent(tileSelectorObject.transform);
-
-                        tileDood.transform.localScale = tileSelectorObject.transform.localScale;
-                        tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
-                    }
+                    CreateTiles(selectedObject);
                 }
             }
         }
         
     }
 
-        void MoveSelection(GameObject target)
+    void CreateTiles(GameObject gamePiece)
+    {
+        if (gamePiece.tag == "gamePiece_r")
         {
+            Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x, 
+                selectedObject.transform.position.y, selectedObject.transform.position.z);
 
-            GameObject.FindGameObjectsWithTag("logic_Selection");
-            Debug.Log("Target: " + target); //Displays method input object name
+            GameObject tileDood = Instantiate(tileSelectorObject, 
+                selectedPosition + redDirection + right, Quaternion.identity);
+            GameObject tileDood1 = Instantiate(tileSelectorObject, 
+                selectedPosition + redDirection + left, Quaternion.identity);
+
+            tileDood.tag = "temp";
+            tileDood1.tag = "temp";
+
+            tileDood.transform.SetParent(tileSelectorObject.transform);
+            tileDood1.transform.SetParent(tileSelectorObject.transform);
+
+            tileDood.transform.localScale = tileSelectorObject.transform.localScale;
+            tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
+        }
+        if (gamePiece.tag == "gamePiece_b")
+        {
+            Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x,
+                           selectedObject.transform.position.y, selectedObject.transform.position.z);
+            GameObject tileDood = Instantiate(tileSelectorObject, selectedPosition + blackDirection + right, Quaternion.identity);
+            GameObject tileDood1 = Instantiate(tileSelectorObject, selectedPosition + blackDirection + left, Quaternion.identity);
+
+            //Debug.Log("Tag: " + tileDood.tag);
+            tileDood.tag = "temp";
+            tileDood1.tag = "temp";
+            //Debug.Log("Tag: " + tileDood.tag);
+
+            tileDood.transform.SetParent(tileSelectorObject.transform);
+            tileDood1.transform.SetParent(tileSelectorObject.transform);
+
+            tileDood.transform.localScale = tileSelectorObject.transform.localScale;
+            tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
+        }
+    }
+
+    void MoveSelection(GameObject target)
+        {
+        if (GameObject.Find("tileSelection(Clone)") != null)
+        {
+            ClearBoard();
+        }
+            //Debug.Log("Target: " + target); //Displays method input object name
             selectedObject = target; //Assigns target to gameObject
             pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target
                 (target.transform.position, pieceSelectorObject.transform.rotation);
             isVisible.enabled = true; //Make selection piece visible
         }
-        void Move(GameObject selection, GameObject target)
+    void Move(GameObject selection, GameObject target)
         {
 
         }
-        void moveCheck()
+    void moveCheck()
         {
 
         }
-        GameObject getSelectedPiece()
+    GameObject getSelectedPiece()
         {
             return (selectedObject);
         }
+    void ClearBoard()
+    {
+
+            foreach (Transform child in tileSelectorObject.transform)
+            {
+                for(int qw = 0; qw < 2; qw++)
+                {
+                    foreach (Transform child1 in child)
+                    {
+                        Debug.Log("Attempting to DESTROY: " + child.gameObject);
+                        DestroyImmediate(child.gameObject);
+                        Debug.Log("Child: " + child);
+                    }
+                    Debug.Log("Attempting to DESTROY: " + child.gameObject);
+                    DestroyImmediate(child.gameObject);
+                    Debug.Log("Child: " + child);
+                }
+            }
+    }
 }
 

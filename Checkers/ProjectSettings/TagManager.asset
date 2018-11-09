@@ -9,6 +9,7 @@ TagManager:
   - blackTile
   - redTile
   - logic_Selection
+  - temp
   layers:
   - Default
   - TransparentFX
