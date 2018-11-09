@@ -20,11 +20,13 @@ public class selectionScript : MonoBehaviour
     private Vector3 left; //Negative right
     private Vector3 blackDirection; //Positive x
 
-
-
     // Use this for initialization
     void Start()
     {
+        gameCamera = Camera.main;
+        tileSelectorObject = GameObject.Find("tileSelection");
+        pieceSelectorObject = GameObject.Find("selectionPiece");
+
         isVisible = GetComponent<Renderer>();
         isVisible.enabled = false;
 
@@ -37,15 +39,17 @@ public class selectionScript : MonoBehaviour
         selectedObject = GameObject.Find("boardMiddle");
     }
 
-    IEnumerator selectionWait() //Cooldown for selecting new unit (Not being called as of 11/2)
+    IEnumerator selectionWait(float countdownValue)
     {
-        Debug.Log("Can click: " + canClick);
         canClick = false;
-        // suspend execution for 1f seconds
-        yield return new WaitForSeconds(1f);
-        print("WaitAndPrint " + Time.time);
+        float currCountdownValue = countdownValue;
+        while(currCountdownValue > 0)
+        {
+            Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(.5f);
+            currCountdownValue--;
+        }
         canClick = true;
-        Debug.Log("Can click: " + canClick);
     }
 
     // Update is called once per frame
@@ -68,10 +72,14 @@ public class selectionScript : MonoBehaviour
                 if (hit1)
                 {
                     MoveSelection(hitInfo.transform.gameObject);
+
                     Debug.Log("Selected Object: " + selectedObject);
                     Debug.Log("Attemping to assign " + selectedObject + " to camera lookAt...");
 
-                    GetComponent<CameraControl>().SetLookAtTarget(selectedObject); //THE ERROR MAKER!!! Does not like the parameter selectedObject, even though I made sure it was a valid GameObject.
+                    gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject);
+                    Debug.Log("Doing a thing");
+                    StartCoroutine(selectionWait(.5f));
+                    Debug.Log("Did the thing");
 
                     Debug.Log("assigned!");
                     if (hitInfo.transform.gameObject.tag == "gamePiece_r")
@@ -92,24 +100,40 @@ public class selectionScript : MonoBehaviour
                     }
                     if (selectedObject.tag == "gamePiece_r") //Checks selection type for direction
                     {
-                        //Debug.Log("You've selected a red piece");
-                        GameObject tileChecker = Instantiate(pieceSelectorObject, redDirection + right, tileSelectorObject.transform.rotation) as GameObject;
-                        GameObject tileChecker1 = Instantiate(pieceSelectorObject, redDirection + left, tileSelectorObject.transform.rotation) as GameObject;
+                        Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, selectedObject.transform.position.z);
+                        GameObject tileDood = Instantiate(tileSelectorObject, selectedPosition + redDirection + right, Quaternion.identity);
+                        GameObject tileDood1 = Instantiate(tileSelectorObject, selectedPosition + redDirection + left, Quaternion.identity);
+
+                        tileDood.transform.SetParent(tileSelectorObject.transform);
+                        tileDood1.transform.SetParent(tileSelectorObject.transform);
+
+                        tileDood.transform.localScale = tileSelectorObject.transform.localScale;
+                        tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
+
+                        //need to set the y positon to 0 somehow!
                     }
                     else if (selectedObject.tag == "gamePiece_b") //Checks selection type for direction
                     {
-                        //Debug.Log("You've selected a black piece");
-                        GameObject tileChecker = Instantiate(pieceSelectorObject, blackDirection + right, tileSelectorObject.transform.rotation) as GameObject;
-                        GameObject tileChecker1 = Instantiate(pieceSelectorObject, blackDirection + left, tileSelectorObject.transform.rotation) as GameObject;
+                        Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x, selectedObject.transform.position.y, selectedObject.transform.position.z);
+                        GameObject tileDood = Instantiate(tileSelectorObject, selectedPosition + blackDirection + right, Quaternion.identity);
+                        GameObject tileDood1 = Instantiate(tileSelectorObject, selectedPosition + blackDirection + left, Quaternion.identity);
+
+                        tileDood.transform.SetParent(tileSelectorObject.transform);
+                        tileDood1.transform.SetParent(tileSelectorObject.transform);
+
+                        tileDood.transform.localScale = tileSelectorObject.transform.localScale;
+                        tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
                     }
                 }
             }
         }
-        selectionWait(); //Prevent selecting the same object multiple times (once per frame)
+        
     }
 
         void MoveSelection(GameObject target)
         {
+
+            GameObject.FindGameObjectsWithTag("logic_Selection");
             Debug.Log("Target: " + target); //Displays method input object name
             selectedObject = target; //Assigns target to gameObject
             pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target
