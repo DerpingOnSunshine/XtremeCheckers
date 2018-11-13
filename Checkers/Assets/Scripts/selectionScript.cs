@@ -106,24 +106,37 @@ public class selectionScript : MonoBehaviour
 
             tileDood.transform.localScale = tileSelectorObject.transform.localScale;
             tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
+
+            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and b
+                .1737f, tileDood.transform.position.z);
+
+            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x,
+                .1737f, tileDood1.transform.position.z);
         }
         if (gamePiece.tag == "gamePiece_b")
         {
             Vector3 selectedPosition = new Vector3(selectedObject.transform.position.x,
                            selectedObject.transform.position.y, selectedObject.transform.position.z);
-            GameObject tileDood = Instantiate(tileSelectorObject, selectedPosition + blackDirection + right, Quaternion.identity);
-            GameObject tileDood1 = Instantiate(tileSelectorObject, selectedPosition + blackDirection + left, Quaternion.identity);
 
-            //Debug.Log("Tag: " + tileDood.tag);
+            GameObject tileDood = Instantiate(tileSelectorObject, 
+                selectedPosition + blackDirection + right, Quaternion.identity);
+            GameObject tileDood1 = Instantiate(tileSelectorObject, 
+                selectedPosition + blackDirection + left, Quaternion.identity);
+
             tileDood.tag = "temp";
             tileDood1.tag = "temp";
-            //Debug.Log("Tag: " + tileDood.tag);
 
             tileDood.transform.SetParent(tileSelectorObject.transform);
             tileDood1.transform.SetParent(tileSelectorObject.transform);
 
             tileDood.transform.localScale = tileSelectorObject.transform.localScale;
             tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
+
+            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and b
+                .1737f, tileDood.transform.position.z);
+
+            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x, //.1737 difference between parent and b
+                .1737f, tileDood1.transform.position.z);
         }
     }
 
@@ -133,7 +146,6 @@ public class selectionScript : MonoBehaviour
         {
             ClearBoard();
         }
-            //Debug.Log("Target: " + target); //Displays method input object name
             selectedObject = target; //Assigns target to gameObject
             pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target
                 (target.transform.position, pieceSelectorObject.transform.rotation);
