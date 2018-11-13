@@ -66,7 +66,6 @@ public class selectionScript : MonoBehaviour
             // Do something with the object that was hit by the raycast.
             if (Input.GetMouseButton(0) && canClick) //Selection of pieces and stuff and things
             {
-                //canClick = false; //Timer normally would reset this to true, but is currently unable to be called due to the error below
                 RaycastHit hitInfo = new RaycastHit();
                 bool hit1 = Physics.Raycast(gameCamera.ScreenPointToRay(Input.mousePosition), out hitInfo);
                 if (hit1)
@@ -83,7 +82,6 @@ public class selectionScript : MonoBehaviour
                 }
             }
         }
-        
     }
 
     void CreateTiles(GameObject gamePiece)
@@ -107,10 +105,10 @@ public class selectionScript : MonoBehaviour
             tileDood.transform.localScale = tileSelectorObject.transform.localScale;
             tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
 
-            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and b
+            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and board (Sets to global 0)
                 .1737f, tileDood.transform.position.z);
 
-            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x,
+            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x, //.1737 difference between parent and board (Sets to global 0)
                 .1737f, tileDood1.transform.position.z);
         }
         if (gamePiece.tag == "gamePiece_b")
@@ -132,10 +130,10 @@ public class selectionScript : MonoBehaviour
             tileDood.transform.localScale = tileSelectorObject.transform.localScale;
             tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
 
-            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and b
+            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and board (Sets to global 0)
                 .1737f, tileDood.transform.position.z);
 
-            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x, //.1737 difference between parent and b
+            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x, //.1737 difference between parent and board (Sets to global 0)
                 .1737f, tileDood1.transform.position.z);
         }
     }
@@ -153,12 +151,15 @@ public class selectionScript : MonoBehaviour
         }
     void Move(GameObject selection, GameObject target)
         {
-
+        //if(moveCheck(selection, target))
+        //    {
+        //
+        //    }
         }
-    void moveCheck()
-        {
-
-        }
+    //bool moveCheck(GameObject selection, GameObject target)
+    //    {
+    //
+    //    }
     GameObject getSelectedPiece()
         {
             return (selectedObject);
