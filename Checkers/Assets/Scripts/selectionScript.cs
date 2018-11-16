@@ -6,6 +6,8 @@ public class selectionScript : MonoBehaviour
 {
     public Camera gameCamera;
 
+    private bool isRedTurn = true;
+
     private GameObject tileCheck;
     private GameObject selectedObject;
 
@@ -99,8 +101,10 @@ public class selectionScript : MonoBehaviour
 
                     gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject);
 
-                    StartCoroutine(selectionWait(.3f));
                     CreateTiles(selectedObject, false);
+
+                    StartCoroutine(selectionWait(.3f));
+                   
                 }
             }
         }
@@ -180,8 +184,10 @@ public class selectionScript : MonoBehaviour
 
     void MoveSelection(GameObject target)
     {
+
         if (GameObject.Find("tileSelection(Clone)") != null)
         {
+
             ClearBoard();
         }
         selectedObject = target; //Assigns target to gameObject
@@ -190,15 +196,18 @@ public class selectionScript : MonoBehaviour
     }
     void Move(GameObject selection, GameObject target)
     {
-        //if(moveCheck(selection, target))
-        //{
-        // DoStuff();
-        //}
+        if(moveCheck(selection, target))
+        {
+            if(selection.tag == "gamePiece_r" && isRedTurn == true && target.gameObject.getComponent<Collider>().tag == "logic_Selection")
+            {
+                Debug.Log("banath");
+            }
+        }
     }
-    //bool moveCheck(GameObject selection, GameObject target)
-    //{
-    // DoStuff();
-    //}
+    bool moveCheck(GameObject selection, GameObject target)
+    {
+        return true;
+    }
     public GameObject getSelectedPiece()
         //Cannot call the method from other scripts??
     {
@@ -217,6 +226,7 @@ public class selectionScript : MonoBehaviour
                     if (child.gameObject.transform != null)
                     {
                             Debug.Log("Attempting to DESTROY: " + child.gameObject);
+                            
                             DestroyImmediate(child.gameObject);
                             Debug.Log("Child: " + child);
                     }
