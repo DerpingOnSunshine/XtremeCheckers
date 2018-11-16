@@ -2575,14 +2575,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db1bcd8258e12d4f9397247c1883035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 129814789}
+  lookAt: {fileID: 0}
   camTransform: {fileID: 534669905}
   distance: 50
-  distance_MIN: 5
-  distance_MAX: 50
+  distance_MIN: 15
+  distance_MAX: 75
   zoomSpeed: 1
-  sensitivityX: 50
-  sensitivityY: 25
+  sensitivityX: 15
+  sensitivityY: 15
 --- !u!1 &535205696
 GameObject:
   m_ObjectHideFlags: 0
@@ -7274,9 +7274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7815ba3548ad241a9447ac7e1d9069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameCamera: {fileID: 534669904}
-  pieceSelectorObject: {fileID: 1438323464}
-  tileSelectorObject: {fileID: 1157625645}
+  gameCamera: {fileID: 0}
+  pieceSelectorObject: {fileID: 0}
+  tileSelectorObject: {fileID: 0}
   render: {fileID: 0}
 --- !u!136 &1438323467
 CapsuleCollider:
@@ -9218,7 +9218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b4aeb6775b32a4cb93134fa8967cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameCamera: {fileID: 534669904}
+  gameCamera: {fileID: 0}
 --- !u!4 &1921929797
 Transform:
   m_ObjectHideFlags: 0

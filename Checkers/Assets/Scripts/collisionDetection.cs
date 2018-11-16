@@ -26,7 +26,8 @@ public class collisionDetection : MonoBehaviour {
         }
         else if(other.gameObject.tag == "gamePiece_r")
         {
-            if(GameObject.Find("tileSelection").GetComponent<selectionScript>().getSelectedPiece().tag == "gamePiece_b")
+            if(GameObject.Find("tileSelection").
+                GetComponent<selectionScript>().getSelectedPiece().tag == "gamePiece_b")
             {
                 this.gameObject.GetComponent<Renderer>().material = enemyTile;
             }
