@@ -10,6 +10,7 @@ TagManager:
   - redTile
   - logic_Selection
   - temp
+  - board
   layers:
   - Default
   - TransparentFX

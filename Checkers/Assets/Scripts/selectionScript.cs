@@ -11,7 +11,8 @@ public class selectionScript : MonoBehaviour
 
     public GameObject pieceSelectorObject;
     public GameObject tileSelectorObject;
-    private Renderer isVisible;
+
+    public Renderer render;
 
     private bool canClick = true;
 
@@ -20,15 +21,19 @@ public class selectionScript : MonoBehaviour
     private Vector3 left; //Negative right
     private Vector3 blackDirection; //Positive x
 
+    private GameObject[] boardPieces;
+    private GameObject[] gamePieces_r;
+    private GameObject[] gamePieces_b;
+
     // Use this for initialization
     void Start()
     {
+        render = GetComponent<Renderer>();
+        render.enabled = true;
+
         gameCamera = Camera.main;
         tileSelectorObject = GameObject.Find("tileSelection");
         pieceSelectorObject = GameObject.Find("selectionPiece");
-
-        isVisible = GetComponent<Renderer>();
-        isVisible.enabled = false;
 
         redDirection.Set(-5, 0, 0); // Up/Down directions ("Forward")
         blackDirection.Set(5, 0, 0);
@@ -37,6 +42,23 @@ public class selectionScript : MonoBehaviour
         left.Set(0, 0, -5);
 
         selectedObject = GameObject.Find("boardMiddle");
+
+        boardPieces = GameObject.FindGameObjectsWithTag("board");
+        gamePieces_r = GameObject.FindGameObjectsWithTag("gamePiece_r");
+        gamePieces_b = GameObject.FindGameObjectsWithTag("gamePiece_b");
+
+        foreach (GameObject objekt in boardPieces)
+        {
+            objekt.GetComponent<Collider>().isTrigger = true;
+        }
+        foreach (GameObject objekt in gamePieces_r)
+        {
+            objekt.GetComponent<Collider>().isTrigger = true;
+        }
+        foreach (GameObject objekt in gamePieces_b)
+        {
+            objekt.GetComponent<Collider>().isTrigger = true;
+        }
     }
 
     IEnumerator selectionWait(float countdownValue)
@@ -77,14 +99,32 @@ public class selectionScript : MonoBehaviour
 
                     gameCamera.GetComponent<CameraControl>().SetLookAtTarget(selectedObject);
 
-                    StartCoroutine(selectionWait(.5f));
-                    CreateTiles(selectedObject);
+                    StartCoroutine(selectionWait(.3f));
+                    CreateTiles(selectedObject, false);
                 }
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    //  So far it only works on the gamepiece that you've selected. We need the tileSelector(s) instead
+    //of the pieceSelector to detect collisions.
+    {
+        if(this.gameObject.name != "selectionPiece")
+        {
+            Debug.Log(other.gameObject.name + " " + this.gameObject.name);
+            if (this.gameObject.GetComponent<Collider>().name != "selectionPiece")
+            {
+                Debug.Log("Trigger Enter: " + other.gameObject + " is touching " + this.gameObject);
+            }
 
-    void CreateTiles(GameObject gamePiece)
+            if (this.gameObject.GetComponent<Collider>().tag == "board")
+            {
+                Debug.Log("Touching board!");
+                other.GetComponent<Renderer>().enabled = false;
+            }
+        }
+    }
+    void CreateTiles(GameObject gamePiece, bool isKing)
     {
         if (gamePiece.tag == "gamePiece_r")
         {
@@ -96,8 +136,8 @@ public class selectionScript : MonoBehaviour
             GameObject tileDood1 = Instantiate(tileSelectorObject, 
                 selectedPosition + redDirection + left, Quaternion.identity);
 
-            tileDood.tag = "temp";
-            tileDood1.tag = "temp";
+            tileDood.tag = "temp"; 
+            tileDood1.tag = "temp"; 
 
             tileDood.transform.SetParent(tileSelectorObject.transform);
             tileDood1.transform.SetParent(tileSelectorObject.transform);
@@ -121,8 +161,8 @@ public class selectionScript : MonoBehaviour
             GameObject tileDood1 = Instantiate(tileSelectorObject, 
                 selectedPosition + blackDirection + left, Quaternion.identity);
 
-            tileDood.tag = "temp";
-            tileDood1.tag = "temp";
+            tileDood.tag = "temp"; 
+            tileDood1.tag = "temp"; 
 
             tileDood.transform.SetParent(tileSelectorObject.transform);
             tileDood1.transform.SetParent(tileSelectorObject.transform);
@@ -130,58 +170,73 @@ public class selectionScript : MonoBehaviour
             tileDood.transform.localScale = tileSelectorObject.transform.localScale;
             tileDood1.transform.localScale = tileSelectorObject.transform.localScale;
 
-            tileDood.transform.position = new Vector3(tileDood.transform.position.x, //.1737 difference between parent and board (Sets to global 0)
+            tileDood.transform.position = new Vector3(tileDood.transform.position.x - .1f, //.1737 difference between parent and board (Sets to global 0)
                 .1737f, tileDood.transform.position.z);
 
-            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x, //.1737 difference between parent and board (Sets to global 0)
+            tileDood1.transform.position = new Vector3(tileDood1.transform.position.x - .1f, //.1737 difference between parent and board (Sets to global 0)
                 .1737f, tileDood1.transform.position.z);
         }
     }
 
     void MoveSelection(GameObject target)
-        {
+    {
         if (GameObject.Find("tileSelection(Clone)") != null)
         {
             ClearBoard();
         }
-            selectedObject = target; //Assigns target to gameObject
-            pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target
-                (target.transform.position, pieceSelectorObject.transform.rotation);
-            isVisible.enabled = true; //Make selection piece visible
-        }
+        selectedObject = target; //Assigns target to gameObject
+        pieceSelectorObject.transform.SetPositionAndRotation //Move selection piece to target
+            (target.transform.position, pieceSelectorObject.transform.rotation);
+    }
     void Move(GameObject selection, GameObject target)
-        {
+    {
         //if(moveCheck(selection, target))
-        //    {
-        //
-        //    }
-        }
+        //{
+        // DoStuff();
+        //}
+    }
     //bool moveCheck(GameObject selection, GameObject target)
-    //    {
-    //
-    //    }
-    GameObject getSelectedPiece()
-        {
-            return (selectedObject);
-        }
+    //{
+    // DoStuff();
+    //}
+    public GameObject getSelectedPiece()
+        //Cannot call the method from other scripts??
+    {
+        Debug.Log("SELECTION SCRIPT: Selected Object: " + selectedObject.name + " " + selectedObject.tag);
+        return (selectedObject);
+    }
     void ClearBoard()
     {
 
-            foreach (Transform child in tileSelectorObject.transform)
+        foreach (Transform child in tileSelectorObject.transform) //Brute force deletion of clone tiles
+        {
+            for(int qw = 0; qw < 2; qw++)
             {
-                for(int qw = 0; qw < 2; qw++)
+                foreach (Transform child1 in child)
                 {
-                    foreach (Transform child1 in child)
+                    if (child.gameObject.transform != null)
                     {
-                        Debug.Log("Attempting to DESTROY: " + child.gameObject);
+                            Debug.Log("Attempting to DESTROY: " + child.gameObject);
+                            DestroyImmediate(child.gameObject);
+                            Debug.Log("Child: " + child);
+                    }
+                    else if(child.gameObject.transform == null)
+                    {
+                        break;
+                    }
+                }
+                Debug.Log("Attempting to DESTROY: " + child.gameObject);
+                if (child.gameObject.transform != null)
+                {
                         DestroyImmediate(child.gameObject);
                         Debug.Log("Child: " + child);
-                    }
-                    Debug.Log("Attempting to DESTROY: " + child.gameObject);
-                    DestroyImmediate(child.gameObject);
-                    Debug.Log("Child: " + child);
+                }
+                else if (child.gameObject.transform == null)
+                {
+                    break;
                 }
             }
+        }
     }
 }
 
