@@ -14,7 +14,7 @@ public class selectionScript : MonoBehaviour
     public GameObject pieceSelectorObject;
     public GameObject tileSelectorObject;
 
-    public Renderer render;
+    private Renderer render;
 
     private bool canClick = true;
 
@@ -181,6 +181,8 @@ public class selectionScript : MonoBehaviour
                 .1737f, tileDood1.transform.position.z);
         }
     }
+
+    //
 
     void MoveSelection(GameObject target)
     {
