@@ -49,7 +49,7 @@ public class selectionScript : MonoBehaviour
         gamePieces_r = GameObject.FindGameObjectsWithTag("gamePiece_r");
         gamePieces_b = GameObject.FindGameObjectsWithTag("gamePiece_b");
 
-        foreach (GameObject objekt in boardPieces)
+        foreach (GameObject objekt in boardPieces) // ignore mispell
         {
             objekt.GetComponent<Collider>().isTrigger = true;
         }
@@ -198,7 +198,7 @@ public class selectionScript : MonoBehaviour
     {
         if(moveCheck(selection, target))
         {
-            if(selection.tag == "gamePiece_r" && isRedTurn == true && target.gameObject.getComponent<Collider>().tag == "logic_Selection")
+            if(selection.tag == "gamePiece_r" && isRedTurn == true && target.gameObject.GetComponent<Collider>().tag == "logic_Selection")
             {
                 Debug.Log("banath");
             }
